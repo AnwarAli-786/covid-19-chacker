@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid-19 predictor</title>
+    <style>
+    * {
+      margin-top: 2px; margin-bottom: 10px; background-position: center !important; background-size: cover !important; background-repeat: no-repeat !important; background: url('https://www.wallpapertip.com/wmimgs/48-485551_top-wallpapers-circle.jpg');
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #07bdf5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.animation{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+  width: 150px;
+  height: 150px;
+  border: 10px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: box 6s 0s forwards infinite alternate-reverse;
+}
+.a {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 4px;
+  animation: a 2s 0s forwards infinite alternate-reverse;
+}
+
+@keyframes box {
+  0% {
+    border-color: white;
+  }
+  25% {
+    border-color: blue;
+    border: 3px solid blue;
+  }
+  50% {
+    border-color: rgb(30, 255, 0);
+    border: 20px solid rgb(30, 255, 0);
+  }
+  75% {
+    border-color: rgb(252, 125, 7);
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    border-color: rgb(2, 255, 120);
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@keyframes a {
+  0% {
+    background-color: white;
+    transform: rotate(360deg);
+  }
+  25% {
+    background-color: rgb(2, 255, 120);
+    transform: rotate(100deg);
+  }
+  50% {
+    background-color: rgb(255, 0, 144);
+    transform: rotate(360deg);
+  }
+  75% {
+    background-color: rgb(30, 255, 0);
+    transform: rotate(230deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate(160deg);
+  }
+}
+
+
+#channel {
+  width: 280px;
+  height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  border:none;
+  font-size:20px;
+}
+    </style>
+  </head>
+  <body>
+   <div class="animation">
+        <div class="box"><div class="a"></div></div>
+   </div>
+    <a href="{% url 'home' %}" target="_blank" color="green"><button id="channel"><h1>Predict Covid</h1></button></a>
+  </body>
+</html>

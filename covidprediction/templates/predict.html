@@ -1,0 +1,39 @@
+{% include 'base.html' %}
+
+{% block content  %}
+
+{% if classification_result == 1 %}
+
+<div class="container">
+
+    <h1 class='text-center mt-3'>Covid Prediction Result</h1>
+    <hr>
+
+    <h1 class='text-center text-primary'>Result Is: <b>{{ classification_result }}</b> So You Are <i>Possitive</i></h1>
+    
+    <h1 class='text-center'><b class='text-danger'>You Are Covid Infected, Goto Hospital Immediately</b></h1>
+
+</div>
+
+{% else %}
+
+<div class="container">
+
+    <h1 class='text-center mt-3'>Covid Prediction Result</h1>
+    <hr>
+
+    <h1 class='text-center text-primary'>Result Is: <b>{{ classification_result }}</b> So You Are <i>Negative</i></h1>
+
+    <h1 class='text-center'><b class='text-success'>You Are Safe and Secure.</b></h1>
+
+    <a class='btn btn-primary mt-4 p-1 text-center' href="{% url 'home' %}">Chack Again</a>
+
+</div>
+
+{% endif %}
+
+
+
+
+
+{% endblock content  %}
